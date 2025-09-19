@@ -5,11 +5,20 @@ sources :
     schema : gz_raw_data
     tables : 
       - name : sales
-        identifier : raw_gz_sales
+        identifier : raw_gz_sales        
+        description: Greenweez'in satışları / her orders_id'de bulunan bir product_id için bir satırımız var
       - name : product
         identifier : raw_gz_product
+        tests :
+          - unique
+          - not_null          
       - name : ship
         identifier : raw_gz_ship
+        tests : 
+          - unique
+          - not_null
+          
+          
 
   
 
